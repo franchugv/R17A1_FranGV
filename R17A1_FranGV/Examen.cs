@@ -22,7 +22,7 @@ namespace R17A1_FranGV
         // valores tipo numericos
         private float _nota;
 
-        private string[] _calificacion;     // 1 a 7.
+        private string[] _calificacion;     // 1 a 6.
 
         // PROPIEDADES (Las propiededas siempren empiezan por mayuscula, sin parentesis)
 
@@ -68,7 +68,7 @@ namespace R17A1_FranGV
         /// </summary>
         private void AsignacionTextoCalificacion()
         {
-            _calificacion = new string[] { "Muy Deficiente", "Insuficiente", "Suficiente", "Bien", "Notable", "Sobresaliente", "Matrícula de Honor" };
+            _calificacion = new string[] {"Muy Deficiente", "Insuficiente", "Suficiente", "Bien", "Notable", "Sobresaliente", "Matrícula de Honor"};
         }
 
       
