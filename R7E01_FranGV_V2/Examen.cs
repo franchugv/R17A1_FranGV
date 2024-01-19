@@ -96,7 +96,7 @@ namespace R7E01_FranGV_V2
         private void ActualizarCalificacion()
         {
             // CONSTANTES
-            const 
+            
             // RECURSOS LOCALES 
             string notaCualitativa = "";
             // PROCESO
