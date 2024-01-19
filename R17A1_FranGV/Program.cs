@@ -18,7 +18,7 @@
 
             // ENTRADA
 
-            boletinAlumno.asignatura = Interfaz.SolicitarCadena("asignatura");
+            boletinAlumno.Asignatura = Interfaz.SolicitarCadena("asignatura");
 
             boletinAlumno.Nota = Interfaz.SolicitarNota("nota", boletinAlumno);
 
@@ -27,7 +27,7 @@
 
             // SALIDA
 
-            Interfaz.MostrarDatos(boletinAlumno.asignatura, boletinAlumno.Calificacion, boletinAlumno.Nota);
+            Interfaz.MostrarDatos(boletinAlumno.Asignatura, boletinAlumno.Calificacion, boletinAlumno.Nota);
 
         }
     }

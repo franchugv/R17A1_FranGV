@@ -157,33 +157,24 @@ namespace R17A1_FranGV
         }
 
 
-        public static void MostrarDatos(string asignaturas, string[] calificaciones, float notas)
+        public static void MostrarDatos(string asignaturas, string calificaciones, float notas)
         {
             // RECURSOS
 
-            int indice;
 
             // INICIALIZACION 
 
-            indice = 0;
 
             // ENTRADA
 
             // PROCESO
 
-            // VALIDACION PARA LA CALIFICACION
-                if (notas <= 2.99) indice = 0;      // "0 Muy Deficiente", "1 Insuficiente", "2 Suficiente", "3 Bien", "4 Notable", "5 Sobresaliente", "6 Matrícula de Honor"         
-                if (notas >= 2.99) indice = 1;
-                if (notas >= 4.99) indice = 2;
-                if (notas >= 5.99) indice = 3;
-                if (notas >= 7.49) indice = 4;
-                if (notas >= 8.89) indice = 5;
-                if (notas == 10) indice = 6;
+         
 
             Console.WriteLine($"Asignatura:\t{asignaturas}");
             Console.WriteLine("*************************************************");
-            Console.WriteLine("Calificación\tNota\n");
-            Console.WriteLine($"{calificaciones[indice]}\t{notas}");
+            Console.WriteLine("CALIFICACION\tNOTA\n");
+            Console.WriteLine($"{calificaciones}\t{notas}");
            
 
             // SALIDA
