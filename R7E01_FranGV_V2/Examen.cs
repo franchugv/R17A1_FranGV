@@ -81,14 +81,12 @@ namespace R7E01_FranGV_V2
         {
             get
             {
+                if (String.IsNullOrEmpty(_calificacion)) throw new Exception("No se a establecido el valor");
+
                 return _calificacion;
             }
 
-            set
-            {
-                // TODO: Evaluar si es necesaio comprobar si el atributo se ha actualizado
-                _calificacion = value;
-            }
+
         }
 
         // MÉTODOS PUBLICOS/PRIVADOS
@@ -96,12 +94,47 @@ namespace R7E01_FranGV_V2
         private void ActualizarCalificacion()
         {
             // CONSTANTES
+
+            const float LIMITE_NOTABLE = 7.5f;
             
             // RECURSOS LOCALES 
-            string notaCualitativa = "";
+            string notaCualitativa = "";    // Calificacion a establecer en el miembro privado.
+
+            int notaTruncada = 0;   // Nota truncada sin decimañles para establecer calificación
             // PROCESO
+            notaTruncada = (int)Math.Truncate(Nota);    // Eliminación del miembro privado
+
+            // Evaluación de la nota truncada para obtener la calificacion
+            switch (notaTruncada)
+            {
+                case 0:
+                case 1:
+                case 2:
+                    notaCualitativa = "Muy Deficiente";
+                    break;
+                case 3:
+                case 4:
+                    notaCualitativa = "Insuficiente";
+                    break;
+                case 5:
+                case 6:
+                    notaCualitativa = "Bien";
+                    break;
+                case 7:
+                case 8:
+                    if (Nota < LIMITE_NOTABLE) notaCualitativa = "Bien";
+                    else notaCualitativa = "Notable";
+                    break;
+                case 9:
+                    notaCualitativa = "Sobresaliente";
+                    break;
+                case 10:
+                    notaCualitativa = "Matrícula de Honor";
+                    break;
+            }
 
             // SALIDA
+
 
             _calificacion = notaCualitativa;
 
