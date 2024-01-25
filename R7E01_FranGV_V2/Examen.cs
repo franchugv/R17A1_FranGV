@@ -24,6 +24,21 @@ namespace R7E01_FranGV_V2
         private float _nota;
         private string _calificacion;
 
+
+        // CONSTRUCTORES
+
+        public Examen()
+        {
+            _asignatura = "Programación";
+            _nota = 0.0f;
+        }
+
+        public Examen(float nota)
+        {
+            _asignatura = "Programación";
+            _nota = nota;
+        }
+
         // PROPIEDADES SIEMPRE SIN PARENTESIS!!!
         /// <summary>
         /// Asignatura a evaluar
@@ -48,7 +63,7 @@ namespace R7E01_FranGV_V2
 
                 // Validación del dato a establecer
                 if (string.IsNullOrEmpty(value)) throw new Exception("Cadena vacía");
-                if (value.Length < CADENA_MAX) throw new Exception("Supera la cadena maxima") ;
+                if (value.Length > CADENA_MAX) throw new Exception("Supera la cadena maxima") ;
                 _asignatura = value;
             }
         }
