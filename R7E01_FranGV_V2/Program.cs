@@ -13,7 +13,7 @@
             Examen[] listaExamenes;
             // INICIALIZACIÓN
 
-            miExamen = new Examen();
+            miExamen = new Examen("");
 
 
 

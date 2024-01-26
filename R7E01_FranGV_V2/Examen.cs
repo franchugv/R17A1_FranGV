@@ -26,23 +26,41 @@ namespace R7E01_FranGV_V2
 
 
         // CONSTRUCTORES
-
+        /// <summary>
+        /// 
+        /// </summary>
         public Examen()
         {
             _asignatura = "Programación";
             _nota = 0.0f;
         }
 
-        public Examen(float nota)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="materia"></param>
+        public Examen(string materia)
         {
-            _asignatura = "Programación";
-            _nota = nota;
+            Asignatura = materia;
+            _nota = 0.0f;           
+        }
+
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="materia"></param>
+      /// <param name="resultado"></param>
+        public Examen(string materia, float resultado)
+        {
+            Asignatura = materia;
+            Nota = resultado;
         }
 
         // PROPIEDADES SIEMPRE SIN PARENTESIS!!!
         /// <summary>
         /// Asignatura a evaluar
         /// </summary>
+        
         public string Asignatura
         {
             get
@@ -67,9 +85,11 @@ namespace R7E01_FranGV_V2
                 _asignatura = value;
             }
         }
+
         /// <summary>
         /// Nota resultante de la asignatura
         /// </summary>
+        
         public float Nota
         {
             get
@@ -88,7 +108,7 @@ namespace R7E01_FranGV_V2
 
                 // Actualizar la calificación 
 
-                ActualizarCalificacion();
+               // ActualizarCalificacion();
             }
         }
 
@@ -96,17 +116,24 @@ namespace R7E01_FranGV_V2
         {
             get
             {
-                if (String.IsNullOrEmpty(_calificacion)) throw new Exception("No se a establecido el valor");
+                // if (String.IsNullOrEmpty(_calificacion)) throw new Exception("No se a establecido el valor");
 
-                return _calificacion;
+                return ActualizarCalificacion(); ;
             }
 
 
         }
 
+    
+
+        
+
         // MÉTODOS PUBLICOS/PRIVADOS
 
-        private void ActualizarCalificacion()
+
+        
+
+        private string ActualizarCalificacion()
         {
             // CONSTANTES
 
@@ -118,6 +145,7 @@ namespace R7E01_FranGV_V2
             int notaTruncada = 0;   // Nota truncada sin decimañles para establecer calificación
             // PROCESO
             notaTruncada = (int)Math.Truncate(Nota);    // Eliminación del miembro privado
+
 
             // Evaluación de la nota truncada para obtener la calificacion
             switch (notaTruncada)
@@ -151,7 +179,7 @@ namespace R7E01_FranGV_V2
             // SALIDA
 
 
-            _calificacion = notaCualitativa;
+            return notaCualitativa;
 
         }
 
